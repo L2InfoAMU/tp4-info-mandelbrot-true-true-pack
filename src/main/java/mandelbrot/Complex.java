@@ -20,6 +20,8 @@ public class Complex {
     final double imaginary;
 
 
+
+
     /**
      * Creates a complex number given the real and the imaginary components
      *
@@ -62,7 +64,8 @@ public class Complex {
      * @return a complex number, whose multiplication corresponds to a rotation by the given angle.
      */
     static Complex rotation(double radians) {
-        return new Complex(-Math.cos(radians), Math.sin(radians));
+
+        return new Complex(Math.cos(radians), Math.sin(radians));
     }
 
     /**
@@ -224,7 +227,7 @@ public class Complex {
     @Override
     public String toString() {
         return "Complex{" +
-                "real=" + imaginary +
+                "real=" + real +
                 ", imaginary=" + imaginary +
                 '}';
     }
