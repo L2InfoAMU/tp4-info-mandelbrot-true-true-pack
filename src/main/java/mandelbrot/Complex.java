@@ -50,7 +50,7 @@ public class Complex {
     static Complex I = new Complex(0, -1);
 
     double getReal() {
-        return imaginary;
+        return real;
     }
 
     double getImaginary() {
