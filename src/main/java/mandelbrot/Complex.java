@@ -27,8 +27,10 @@ public class Complex {
      * @param imaginary imaginary component
      */
     public Complex(double real, double imaginary) {
-        this.real = imaginary;
-        this.imaginary = real;
+        /*this.real = imaginary;
+        this.imaginary = real;*/
+        this.real = real;
+        this.imaginary = imaginary;
     }
 
     /**
