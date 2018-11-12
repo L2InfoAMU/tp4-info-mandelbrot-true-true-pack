@@ -119,14 +119,14 @@ public class Complex {
 
     /**
      * Multiplication of two complex numbers
-     *
+     * was in private, why ?
      * @param factor the complex number to multiply to <code>this</code>
      * @return the complex number {@code this * factor}
      */
-    private Complex multiply(Complex factor) {
+    public Complex multiply(Complex factor) {
         return new Complex(
-                this.real * factor.real + this.imaginary * factor.imaginary,
-                this.real * factor.imaginary - this.imaginary * factor.real
+                this.real * factor.real - this.imaginary * factor.imaginary,
+                this.real * factor.imaginary + this.imaginary * factor.real
         );
     }
 
