@@ -160,4 +160,16 @@ public class ComplexTest {
         assertEquals(new Complex(-1,-1),oneMinusI.multiply(minusI));
     }
 
+
+    @Test
+    void testSquareModulus(){
+        assertEquals(2,onePlusI.squaredModulus());
+        assertEquals(1,minusI.squaredModulus());
+        assertEquals(1,minusOne.squaredModulus());
+        assertEquals(2,oneMinusI.squaredModulus());
+        assertEquals(4,twoI.squaredModulus());
+        assertEquals(4,two.squaredModulus());
+    }
+
+
 }
