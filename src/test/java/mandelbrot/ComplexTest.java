@@ -200,5 +200,15 @@ public class ComplexTest {
         assertEquals(twoI.negate(),oneMinusI.pow(2));
         assertEquals(new Complex(-2,-2),oneMinusI.pow(3));
     }
+  @Test
+    void testEquals(){
+        assertEquals(true, twoI.equals(twoI));
+        assertEquals(false, twoI.equals(two));
+        assertEquals(false, onePlusI.equals(Complex.ONE));
+        assertEquals(false, oneMinusI.equals(twoI));
+        assertEquals(true,onePlusI.equals(new Complex(1,1)));
+        assertEquals(true,Complex.ONE.equals(Complex.ONE));
+        assertEquals(false, onePlusI.equals(new Complex (4,6)));
+    }
 
 }
