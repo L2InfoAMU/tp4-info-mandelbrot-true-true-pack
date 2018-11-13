@@ -192,9 +192,13 @@ public class ComplexTest {
 
     @Test
     void testPow(){
-        assertEquals(onePlusI, onePlusI.multiply(Complex.ONE));
-        assertEquals(two, Complex.ONE.multiply(two));
-        assertEquals(new Complex(-1,-1),oneMinusI.multiply(minusI));
+        assertEquals(Complex.ONE, onePlusI.pow(0));
+        assertEquals(Complex.ONE, Complex.ONE.pow(0));
+        assertEquals(Complex.ONE, Complex.ONE.pow(1));
+        assertEquals(onePlusI, onePlusI.pow(1));
+        assertEquals(twoI, onePlusI.pow(2));
+        assertEquals(twoI.negate(),oneMinusI.pow(2));
+        assertEquals(new Complex(-2,-2),oneMinusI.pow(3));
     }
 
 }
