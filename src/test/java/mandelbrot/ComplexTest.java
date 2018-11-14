@@ -209,6 +209,7 @@ public class ComplexTest {
         assertEquals(true,onePlusI.equals(new Complex(1,1)));
         assertEquals(true,Complex.ONE.equals(Complex.ONE));
         assertEquals(false, onePlusI.equals(new Complex (4,6)));
+        assertEquals(false,onePlusI.equals(6));
     }
 
 }

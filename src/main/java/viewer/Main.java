@@ -16,6 +16,12 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    /*
+
+    Scanner saisieUtilisateur = new Scanner(System.in);
+    System.out.println("Veuillez saisir un mot :");
+    String str (or other if it's not string) = saisieUtilisateur.next();
+     */
 
     public static void main(String[] args) {
         launch(args);

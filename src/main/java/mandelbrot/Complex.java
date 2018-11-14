@@ -2,15 +2,15 @@ package mandelbrot;
 
 import java.util.Objects;
 
-/**
- * A class to represent complex numbers and their arithmetic.
+
+ /** A class to represent complex numbers and their arithmetic.
  * <p>
  * Complex numbers are immutable.
  */
 public class Complex {
 
-    /**
-     * The real part of a complex number.
+
+    /** The real part of a complex number.
      */
     final double real;
 
@@ -22,43 +22,54 @@ public class Complex {
 
 
 
-    /**
-     * Creates a complex number given the real and the imaginary components
+
+     /** Creates a complex number given the real and the imaginary components
      *
      * @param real      real component
      * @param imaginary imaginary component
      */
+
+
     public Complex(double real, double imaginary) {
         this.real = real;
         this.imaginary = imaginary;
     }
 
-    /**
-     * Zero as a complex number
+
+
+     /** Zero as a complex number
      */
+
     static Complex ZERO = new Complex(0, 0);
 
-    /**
-     * One as a complex number
+
+
+     /** One as a complex number
      */
     static Complex ONE = new Complex(1, 0);
 
 
-    /**
-     * The complex number whose square is -1
+
+     /** The complex number whose square is -1
      */
     static Complex I = new Complex(0, 1);
 
-    double getReal() {
+
+
+
+    double getReal()
+    {
         return real;
     }
 
-    double getImaginary() {
+
+    double getImaginary()
+    {
         return imaginary;
     }
 
-    /**
-     * Creates complex numbers corresponding to rotations
+
+     /** Creates complex numbers corresponding to rotations
      *
      * @param radians the angle of the rotation (counterclockwise) in radians
      * @return a complex number, whose multiplication corresponds to a rotation by the given angle.
@@ -68,18 +79,20 @@ public class Complex {
         return new Complex(Math.cos(radians), Math.sin(radians));
     }
 
-    /**
-     * Creates a complex number with null imaginary part
+
+     /** Creates a complex number with null imaginary part
      *
      * @param real the real component
      * @return the complex <code>real + 0 i</code>
      */
-    public static Complex real(double real) {
+    public static Complex real(double real)
+    {
         return new Complex(real, 0);
     }
 
-    /**
-     * Addition of two complex numbers
+
+
+    /** Addition of two complex numbers
      *
      * @param addend a complex
      * @return the complex {@code this + addend}
@@ -89,40 +102,49 @@ public class Complex {
                 this.imaginary + addend.getImaginary());
     }
 
-    /**
-     * The negation of a complex number
+
+     /** The negation of a complex number
      *
      * @return A complex <code>c</code> such that <code>this + c = 0</code>
      */
-    Complex negate() {
+
+
+     Complex negate()
+    {
         return new Complex(-this.real, -this.imaginary);
     }
 
-    /**
-     * The conjugate of a complex number
+
+     /** The conjugate of a complex number
      *
      * @return A complex <code>c</code> such that <code>this * c = ||this|| ** 2</code>
      */
-    Complex conjugate() {
+
+
+     Complex conjugate()
+    {
         return new Complex(this.real, -this.imaginary);
     }
 
-    /**
-     * Subtraction of two complex numbers
+
+     /** Subtraction of two complex numbers
      *
      * @param subtrahend the complex to be subtracted from <code>this</code>
      * @return the complex number <code>this - subtrahend</code>
      */
+
     Complex subtract(Complex subtrahend) {
         return new Complex(this.real - subtrahend.real,this.imaginary - subtrahend.imaginary);
     }
 
-    /**
-     * Multiplication of two complex numbers
+
+     /** Multiplication of two complex numbers
      * was in private, why ?
      * @param factor the complex number to multiply to <code>this</code>
      * @return the complex number {@code this * factor}
      */
+
+
     public Complex multiply(Complex factor) {
         return new Complex(
                 this.real * factor.real - this.imaginary * factor.imaginary,
@@ -130,30 +152,36 @@ public class Complex {
         );
     }
 
-    /**
-     * Squared modulus of a complex number
+
+     /** Squared modulus of a complex number
      *
      * @return <code>||this|| ** 2</code>
      */
-    double squaredModulus() {
+
+
+     double squaredModulus()
+    {
         return (real * real) + (imaginary * imaginary);
     }
 
-    /**
-     * Modulus (distance to zero) of a complex number
+
+     /** Modulus (distance to zero) of a complex number
      *
      * @return <code>||this||</code>
      */
-    double modulus() {
+
+     double modulus()
+    {
         return Math.sqrt(squaredModulus());
     }
 
 
-    /**
-     * reciprocal of a complex number
+
+    /** reciprocal of a complex number
      *
      * @return a complex number <code>c</code> such that <code>this * c = 1</code>
      */
+
     Complex reciprocal() {
         if (this.equals(ZERO)){
             throw new ArithmeticException("divide by zero");
@@ -163,8 +191,8 @@ public class Complex {
         return new Complex(real / m, -(imaginary) / m);
     }
 
-    /**
-     * Division of two complex numbers
+
+     /** Division of two complex numbers
      *
      * @param divisor the denominator (a complex number)
      * @return the complex number <code>this / divisor</code>
@@ -181,8 +209,8 @@ public class Complex {
     }
 
 
-    /**
-     * Integral power of a complex number
+
+     /** Integral power of a complex number
      *
      * @param p a non-negative integer
      * @return the complex number <code>this ** p</code>
@@ -196,13 +224,18 @@ public class Complex {
         return result;
     }
 
-    /**
-     * Scalar multiplication of a complex number
+
+
+
+
+     /** Scalar multiplication of a complex number
      *
      * @param lambda a scalar number
      * @return the complex number <code>lambda * this</code>
      */
-    public Complex scale(double lambda) {
+
+    public Complex scale(double lambda)
+    {
         return new Complex(lambda * real, lambda * imaginary);
     }
 
@@ -218,8 +251,10 @@ public class Complex {
                 Helpers.doubleCompare(complex.imaginary, imaginary) == 0;
     }
 
+
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return Objects.hash(real, imaginary);
     }
 
