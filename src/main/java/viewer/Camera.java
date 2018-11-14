@@ -26,8 +26,7 @@ class Camera {
     private Complex height; /* Vector for the height of the rectangle */
 
 
-    /**
-     * Creates a view.
+    /** Creates a view.
      *
      * @param centerX     the real part of the point on which the view is centered
      * @param centerY     the imaginary part of the point on which the view is centered
@@ -40,8 +39,7 @@ class Camera {
         this.center = new Complex(centerX, centerY);
     }
 
-    /**
-     * Converts position relative to the rectangle defining the view
+    /** Converts position relative to the rectangle defining the view
      * into absolute complex numbers.
      *
      * @param tx horizontal relative position, between 0 (left) and 1 (right)

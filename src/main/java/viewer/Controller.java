@@ -1,3 +1,4 @@
+
 package viewer;
 
 import javafx.fxml.FXML;
@@ -13,16 +14,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-/**
- * Controls the color of the pixels of the canvas.
+/** Controls the color of the pixels of the canvas.
  */
 public class Controller implements Initializable {
 
-    /**
-     * Dimension of the grid used to supersample each pixel.
+    /** Dimension of the grid used to supersample each pixel.
      * The number of subpixels for each pixel is the square of <code>SUPERSAMPLING</code>
      */
+
     private static final int SUPERSAMPLING = 3;
+
+
 
     @FXML
     private Canvas canvas; /* The canvas to draw on */
@@ -46,8 +48,7 @@ public class Controller implements Initializable {
     /* algorithm to generate the distribution of colors */
     private Histogram histogram = new Histogram(breakpoints, colors);
 
-    /**
-     * Method called when the graphical interface is loaded
+    /** Method called when the graphical interface is loaded
      *
      * @param location  location
      * @param resources resources
@@ -65,8 +66,7 @@ public class Controller implements Initializable {
         renderPixels(pixels);
     }
 
-    /**
-     * display each pixel
+    /** display each pixel
      *
      * @param pixels the list of all the pixels to display
      */
@@ -77,8 +77,7 @@ public class Controller implements Initializable {
         }
     }
 
-    /**
-     * Attributes to each subpixel a color
+    /** Attributes to each subpixel a color
      *
      * @param subPixels the list of all subpixels to display
      */
@@ -97,8 +96,7 @@ public class Controller implements Initializable {
     }
 
 
-    /**
-     * Count how many subpixel diverge.
+    /** Count how many subpixel diverge.
      *
      * @param subPixels the subpixels to display
      * @return the number of diverging subpixels
@@ -110,8 +108,7 @@ public class Controller implements Initializable {
                         .count();
     }
 
-    /**
-     * Generates the list of all the pixels in the canvas
+    /** Generates the list of all the pixels in the canvas
      *
      * @return the list of pixels
      */
@@ -133,8 +130,7 @@ public class Controller implements Initializable {
         return pixels;
     }
 
-    /**
-     * Create the pixel with given coordinates
+    /** Create the pixel with given coordinates
      *
      * @param x horizontal coordinate of the pixel
      * @param y vertical coordinate of the pixel
@@ -157,4 +153,5 @@ public class Controller implements Initializable {
         }
         return new Pixel(x, y, sampledSubPixels);
     }
+
 }
